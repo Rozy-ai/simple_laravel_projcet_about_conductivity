@@ -129,11 +129,169 @@ button:active {
     text-transform: uppercase;
 
 }
+
+a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  /* font-size: 2em; */
+  /* padding: 10px 20px; */
+  text-decoration: none;
+}
+.header .logo img{
+    max-height: 60px;
+    padding: 0px 20px;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
         </style>
     </head>
     <body class="antialiased">
+        <header class="header">
+            <a href="/" class="logo"> <img src="/images/logo.png" alt="TITU"></a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            {{-- <h2>Oguz han Engineering and Technology University of Turkmenistan</h2> --}}
+            <ul class="menu">
+              <li><a href="#calculator">Calculator</a></li>
+              <li><a href="#about">About</a></li>
+              {{-- <li><a href="#careers">Careers</a></li> --}}
+              {{-- <li><a href="#contact">Contact</a></li> --}}
+            </ul>
+          </header>
+
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <div class="container">
+            <div class="main-start">
+                <img src="/images/titu.png" alt="TITU">
+              </div>
+        </div>
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            <div class="container" id="calculator">
                 <h1>Calculating the thermal conductivity of a one-dimensional rod</h1>
         
                 <div class="calculator">
@@ -185,5 +343,54 @@ button:active {
             </div>
         
         </div>
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" id="about">
+            <div class="container" style="text-align:left">
+                <h2 style="text-align:center">About ETUT</h2> <br> <br>
+                <div class="text-justify"><p>There are currently five faculties at the university:</p>
+
+                    <p>Chemical and Nanotechnologies;<br>
+                    <br>
+                    Biotechnology and Ecology;<br>
+                    <br>
+                    Computer Sciences and Information Technologies;<br>
+                    <br>
+                    Cyberphysical Systems;<br>
+                    <br>
+                    Economics of Innovations.</p>
+                    
+                    <p>The university offers the following undergraduate courses:</p>
+                    
+                    <p>1. Mathematics and mechanics (course of study: applied mathematics and computer science (mathematics for engineers)).</p>
+                    
+                    <p>2. Biological sciences (areas of preparation: cellular and molecular biology; genetics and bioengineering; microbiology).</p>
+                    
+                    <p>3. Chemical Technology (areas of training: chemical technology; chemical engineering).</p>
+                    
+                    <p>4. Industrial ecology and biotechnology (direction of preparation: biotechnology).</p>
+                    
+                    <p>5. Materials Technology (Preparation: Materials Research and New Materials Technology).</p>
+                    
+                    <p>6. Nanotechnologies and nanomaterials (direction of preparation: nanomaterials).</p>
+                    
+                    <p>7. Geography (areas of preparation: ecology and nature use; cartography and geoinformatics).</p>
+                    
+                    <p>8. Informatics and Computing Techniques (Areas of Preparation: Informatics and Computing Techniques; Information Systems and Technologies; Digital Infrastructure and Cyber ​​Security; Mobile and Network Engineering; Animation and Graphic Design; Artificial Intelligence and Expert Systems; Data Protection Techniques; Digital Economy) .</p>
+                    
+                    <p>9. Mechanical Engineering (areas of preparation: automation and control; mechatronics and robotics).</p>
+                    
+                    <p>10. Electronics, radio engineering and communication systems (direction of preparation: electronics and nanoelectronics).</p>
+                    
+                    <p>11. Photonics, equipment, optical and biotechnical systems and technologies (direction of preparation: biotechnology electronics).</p>
+                    
+                    <p>12. Economics and Management (areas of training: HR Management; Innovative Economics; Technology Business; Innovation Management and International Business).</p>
+                    
+                    <p>13. Physical and technical sciences and technologies (direction of preparation: physics of modern technologies).</p>
+                    
+                    <p>14. Study of linguistics and literature (areas of preparation: philology (technical English and Japanese); computer linguistics).</p>
+                    
+                    <p>Master's degree is taught in the field of "Pedagogical Education (Methods of Teaching Natural and Exact Sciences)".</p>
+                    
+                    <p>&nbsp;</p></div>
+    </div>
     </body>
 </html>
